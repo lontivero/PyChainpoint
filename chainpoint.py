@@ -3,12 +3,18 @@ import json
 import hashlib
 from merkletools import MerkleTools
 
+
 class Chainpoint(object):
     CHAINPOINT_VALID_VERSIONS = ['1.0', '1.1', '2']
     CHAINPOINTv1_VALID_HASHTYPES = ['SHA-256']
     CHAINPOINTv2_VALID_HASHTYPES = ['SHA224', 'SHA256', 'SHA384', 'SHA512', 'SHA3-224', 'SHA3-256', 'SHA3-384',
                                     'SHA3-512']
     CHAINPOINTv2_VALID_ANCHORTYPES = ['BTCOpReturn']
+
+    def as_complex(dct):
+        if 'target_hash' in dct:
+            return complex(dct['real'], dct['imag'])
+        return dct
 
     def isValidReceipt(self, receipt_json):
         receipt = json.loads(receipt_json)

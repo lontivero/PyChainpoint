@@ -7,7 +7,7 @@ A Python module for validating Chainpoint blockchain receipts
 ### Installation
 
 ```
-$ pip install proof-of-existence-chainpoint-py
+$ pip install chainpoint
 ```
 
 ### Usage
@@ -22,7 +22,7 @@ chainpoint_validate.is_valid_receipt(receipt)
 #### Example
 
 ```python
-from proof_of_existence import Chainpoint
+from chainpoint import Chainpoint
 
 receipt = '''{
     "header": {
